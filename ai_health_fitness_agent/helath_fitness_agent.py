@@ -1,6 +1,17 @@
 import streamlit as st
 from phi.agent import Agent
 from phi.model.ollama import Ollama
+from ollama import Client
+import os
+
+# Fetch credentials from environment variables
+ngrok_username = os.environ.get("NGROK_USERNAME")
+ngrok_password = os.environ.get("NGROK_PASSWORD")
+ngrok_url = os.environ.get("NGROK_URL") # Assuming ngrok_url is also a secret or passed differently
+
+# Initialize the Ollama client with Basic Auth
+if ngrok_username and ngrok_password:
+    client = Client(host=ngrok_url, auth=(ngrok_username, ngrok_password))
 
 st.set_page_config(
     page_title="AI Health & Fitness Planner",
@@ -104,7 +115,7 @@ def main():
 
     if llm_api_key:
         try:
-            llm_model = Ollama(id="llama3.2")
+            llm_model = Ollama(id="llama3.2:1b", client=client)
         except Exception as e:
             st.error(f"❌ Error initializing LLM model: {e}")
             return
