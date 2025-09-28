@@ -1,0 +1,15 @@
+# Environment Variables for AI Health & Fitness Agent
+# Copy this file to .env and fill in your actual values
+
+# Hugging Face Configuration (Primary - for Ollama deployed on HF Spaces)
+HF_API_KEY=your_huggingface_api_key_here
+HF_SPACE_URL=https://your-username-space-name.hf.space
+
+# Optional: LLM Configuration
+DEFAULT_MODEL=llama3.2:1b
+OLLAMA_HOST=http://localhost:11434
+
+# Optional: App Configuration
+APP_PORT=8501
+APP_HOST=0.0.0.0
+DEBUG=false
