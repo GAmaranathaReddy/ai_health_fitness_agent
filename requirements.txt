@@ -2,3 +2,5 @@ streamlit
 phidata
 ollama
 pytest
+python-dotenv
+matplotlib
