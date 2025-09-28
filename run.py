@@ -1,8 +1,6 @@
-import os
-import sys
+from ai_health_fitness_agent.helath_fitness_agent import main as app_main
 
-def main():
-    os.system("streamlit run ai_health_fitness_agent/helath_fitness_agent.py  --server.port=8501 --server.address=0.0.0.0")
-
+# Run Streamlit app directly when executing: streamlit run run.py
+# Avoid spawning a second Streamlit process (previous os.system approach caused blank page / port issues).
 if __name__ == "__main__":
-    sys.exit(main())
+    app_main()
