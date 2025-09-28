@@ -1,0 +1,10 @@
+{
+  "age": 30,
+  "height": 175.0,
+  "weight": 70.0,
+  "activity_level": "Sedentary",
+  "dietary_pref": "Vegetarian",
+  "goal": "Lose Weight",
+  "bmi": 22.86,
+  "tdee": 1972
+}
